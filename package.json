@@ -1,0 +1,38 @@
+{
+  "name": "kbjstate",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@material-ui/core": "^4.12.3",
+    "@material/animation": "^13.0.0",
+    "@mui/icons-material": "^5.4.1",
+    "@next/bundle-analyzer": "^12.0.10",
+    "@reduxjs/toolkit": "^1.7.2",
+    "@types/react-js-pagination": "^3.0.4",
+    "axios": "^0.25.0",
+    "gsap": "^3.9.1",
+    "material-ui-image": "^3.3.2",
+    "material-ui-popup-state": "^2.0.0",
+    "next": "12.0.10",
+    "next-redux": "^0.1.1",
+    "next-redux-wrapper": "^7.0.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-js-pagination": "^3.0.3",
+    "react-redux": "^7.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.17",
+    "@types/react": "17.0.39",
+    "eslint": "8.8.0",
+    "eslint-config-next": "12.0.10",
+    "typescript": "4.5.5"
+  }
+}
