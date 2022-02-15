@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import Title from '../components/login/Title';
 
 import styles from '../styles/Home.module.css';
+import Index from '../components/Home/Index';
 
 const Home: NextPage = () => {
   const dataLog = useSelector((state: any) => state.user.isLogin);
@@ -12,7 +13,7 @@ const Home: NextPage = () => {
   return (
     <div>
       {dataLog ? (
-        <div>asdf</div>
+        <Index />
       ) : (
         <Container maxWidth="sm">
           <Box
