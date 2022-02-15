@@ -11,9 +11,9 @@ export const headstyle = makeStyles((theme) => ({
   },
   headLeft: {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'left',
     alignItems: 'center',
-    width: '300px',
+
     height: '80px',
   },
   headLeftInner: {

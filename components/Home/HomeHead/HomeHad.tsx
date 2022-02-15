@@ -1,13 +1,45 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { headstyle } from '../../../makeStyles/Homehead';
-import { CardMedia } from '@mui/material';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { CardMedia, Paper, Switch } from '@mui/material';
+import { styled } from '@mui/system';
+import clsx from 'clsx';
+import { useSwitch, UseSwitchProps } from '@mui/base/SwitchUnstyled';
+import MuiSwitch from '@material-ui/core/Switch';
+import { withStyles } from '@material-ui/core/styles';
+
+const Switchs = withStyles({
+  switchBase: {
+    '&$disabled': {
+      color: 'yellow',
+    },
+    '&$disabled + $track': {
+      backgroundColor: 'green',
+      opacity: 0.5,
+    },
+  },
+  track: {},
+  disabled: {},
+})(MuiSwitch);
+
 const HomeHad = () => {
   const classes = headstyle();
+  const [state, setState] = useState({
+    gilad: true,
+  });
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setState({
+      ...state,
+      [event.target.name]: event.target.checked,
+    });
+  };
 
   return (
     <Box>
@@ -78,6 +110,37 @@ const HomeHad = () => {
               <Button sx={{ height: '80px', width: '130px' }} color="inherit">
                 유저이름
               </Button>
+              <Paper
+                sx={{
+                  position: 'absolute',
+                  top: '64px',
+                  right: 10,
+                  marginRight: 1.5,
+                  borderRadius: '0px 0px 5px 5px',
+                }}
+              >
+                <Typography
+                  sx={{
+                    p: 2,
+                    borderBottom: '1px solid gray',
+                  }}
+                >
+                  알림
+                  <Switch
+                    sx={{ marginLeft: '15px' }}
+                    checked={state.gilad}
+                    onChange={handleChange}
+                    name="gilad"
+                  />
+                </Typography>
+
+                <Typography sx={{ fontSize: '15px', p: 2 }}>
+                  <Box sx={{ display: 'flex' }}>
+                    <Box sx={{ marginRight: '10px' }}>로그아웃</Box>
+                    <LogoutIcon />
+                  </Box>
+                </Typography>
+              </Paper>
             </Box>
           </Box>
         </Box>
