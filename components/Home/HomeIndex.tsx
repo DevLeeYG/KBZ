@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeHad from './HomeHead/HomeHad';
 
-const Index = () => {
+const HomeIndex = () => {
   return (
     <div>
       <HomeHad />
@@ -9,4 +9,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default HomeIndex;
