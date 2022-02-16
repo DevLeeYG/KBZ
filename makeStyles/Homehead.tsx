@@ -2,28 +2,30 @@ import { makeStyles } from '@material-ui/core';
 
 export const headstyle = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    width: '100%',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    height: '80px',
-    backgroundColor: '#294ec7',
+    [theme.breakpoints.up('xs')]: {
+      display: 'flex',
+      height: '80px',
+      width: '100%',
+      color: 'white',
+      justifyContent: 'space-between',
+      backgroundColor: '#294ec7',
+    },
   },
-  headLeft: {
-    display: 'flex',
-    justifyContent: 'left',
-    alignItems: 'center',
 
-    height: '80px',
+  BoxLeft: {
+    [theme.breakpoints.up('xs')]: {},
   },
-  headLeftInner: {
-    marginLeft: '15px',
-    marginRight: '15px',
+  LogoBox: {
+    [theme.breakpoints.up('xs')]: {
+      display: 'flex',
+      height: '80px',
+      width: '200px',
+      alignItems: 'center',
+    },
   },
-  mediaBox: {
-    position: 'relative',
-  },
-  media: {
-    width: '180px',
+  Logo: {
+    [theme.breakpoints.up('xs')]: {
+      width: '180px',
+    },
   },
 }));
