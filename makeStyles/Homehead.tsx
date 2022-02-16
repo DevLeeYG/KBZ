@@ -2,28 +2,55 @@ import { makeStyles } from '@material-ui/core';
 
 export const headstyle = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    width: '100%',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    height: '80px',
-    backgroundColor: '#294ec7',
+    [theme.breakpoints.up('xs')]: {
+      display: 'flex',
+      height: '80px',
+      width: '100%',
+      color: 'white',
+      justifyContent: 'space-between',
+      backgroundColor: '#294ec7',
+    },
   },
-  headLeft: {
-    display: 'flex',
-    justifyContent: 'left',
-    alignItems: 'center',
 
-    height: '80px',
+  BoxLeft: {
+    [theme.breakpoints.up('xs')]: {},
   },
-  headLeftInner: {
-    marginLeft: '15px',
-    marginRight: '15px',
+  LogoBox: {
+    [theme.breakpoints.up('xs')]: {
+      display: 'flex',
+      height: '80px',
+      width: '120px',
+      alignItems: 'center',
+      marginLeft: '40px',
+    },
+    [theme.breakpoints.up('sm')]: {
+      width: '135px',
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '150px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '200px',
+    },
   },
-  mediaBox: {
-    position: 'relative',
+  Logo: {
+    [theme.breakpoints.up('xs')]: {
+      width: '180px',
+    },
   },
-  media: {
-    width: '180px',
+
+  Alarm: {
+    [theme.breakpoints.up('xs')]: {
+      display: 'none',
+    },
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+  },
+
+  menuBtn: {
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
   },
 }));
