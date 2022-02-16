@@ -18,6 +18,8 @@ import { CardMedia } from '@mui/material';
 import { headstyle } from '../../../makeStyles/Homehead';
 import BasicMenu from './headsource/BasicMenu';
 import DropMenu from './headsource/DropMenu';
+import SubSidebar from '../../Home/HomeHead/headsource/SubSidebar';
+import UserAlarm from '../../Home/HomeHead/headsource/UserAlarm';
 const drawerWidth = 240;
 // const Switchs = withStyles({
 //   switchBase: {
@@ -64,26 +66,35 @@ const HomeHad = (props: Props) => {
       <CssBaseline />
       <AppBar
         position="fixed"
+        // className={classes.Appbar}
         sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
+          width: { md: `calc(100% - ${drawerWidth}px)` },
+          ml: { md: `${drawerWidth}px` },
         }}
       >
         <Toolbar className={classes.root}>
-          <Box>
+          <Box sx={{ width: '100px' }}>
             <DropMenu />
           </Box>
-          <Box className={classes.LogoBox}>
-            <CardMedia component="img" alt="logo" image="/new_logo.webp" />
+          <Box sx={{ width: 300 }}>
+            <Box className={classes.LogoBox}>
+              <CardMedia component="img" alt="logo" image="/new_logo.webp" />
+            </Box>
+          </Box>
+          <Box className={classes.menuBtn}>
+            <SubSidebar />
+          </Box>
+          <Box className={classes.Alarm}>
+            <UserAlarm />
           </Box>
         </Toolbar>
       </AppBar>
+
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
           variant="temporary"
@@ -105,7 +116,7 @@ const HomeHad = (props: Props) => {
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: 'none', sm: 'block' },
+            display: { xs: 'none', sm: 'none', md: 'block' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -125,8 +136,6 @@ const HomeHad = (props: Props) => {
         }}
       >
         <Toolbar />
-
-        <Box></Box>
       </Box>
     </Box>
   );

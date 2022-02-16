@@ -7,32 +7,9 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { isJSDocCommentContainingNode } from 'typescript';
 export default function BasicPopover() {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [select, setSelect] = useState([
-    { id: 0, menu: '김반장' },
-    { id: 1, menu: '업무요청' },
-    { id: 2, menu: '게시판' },
-  ]);
-  const [choice, setChoice] = useState(select[0].menu);
 
-  const handleChoice = (id: number) => {
-    setChoice(select[id].menu);
-    setAnchorEl(null);
-  };
+  const [choice, setChoice] = useState('');
 
-  const menudata = select.map((el) => {
-    return (
-      <div>
-        <Typography
-          onClick={() => handleChoice(el.id)}
-          key={el.id}
-          sx={{ p: 0.5, width: '90px' }}
-        >
-          {el.menu}
-        </Typography>
-        <Divider />
-      </div>
-    );
-  });
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
@@ -63,7 +40,10 @@ export default function BasicPopover() {
           horizontal: 'left',
         }}
       >
-        {menudata}
+        <Box>
+          <Box>hi33741</Box>
+          <Box></Box>
+        </Box>
       </Popover>
     </div>
   );
